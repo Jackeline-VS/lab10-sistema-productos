@@ -231,6 +231,7 @@ class DescuentoMixin:
         return round(precio * (1 - self.descuento_pct / 100), 2)
 
     def detalle_extra(self) -> str:
+        """Agrega el porcentaje de oferta al detalle de la clase concreta."""
         base = super().detalle_extra()  # type: ignore[misc]
         return f"{base} | Oferta: -{self.descuento_pct:g}%"
 
